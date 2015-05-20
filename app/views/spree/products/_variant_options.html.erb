@@ -1,10 +1,10 @@
 <% if @product.multiple_variants? %>
 
+  <%= @product.first_option_type.presentation %>
   <ul>
-    <%= @product.first_option_type.presentation %>
     <% @product.variants_including_master_and_option_values(current_currency).each_with_index do |variant, index| %>
       <li data-variant-id='<%= variant.id %>' class="<%= variant.can_supply? ? 'can-supply' : 'cannot-supply' %> " data-variant-message='<%= variant.stock_message ? variant.stock_message : variant.first_option_value.delivery_message %>'>
-        
+
         <%= radio_button_tag 'variant_id', variant.id, @variant_id ? (@variant_id == variant.id.to_s) : (index == 0), disabled: !variant.can_supply? %>
 
         <%= variant.first_option_value.presentation %>
