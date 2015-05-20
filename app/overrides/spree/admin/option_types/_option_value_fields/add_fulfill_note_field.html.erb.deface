@@ -1,0 +1,3 @@
+<!-- insert_bottom "[data-hook='option_value']" -->
+
+<td class='delivery_message'><%= f.text_field :delivery_message %></td>

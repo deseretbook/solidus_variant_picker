@@ -1,0 +1,29 @@
+<% if @product.multiple_variants? %>
+
+  <ul>
+    <%= @product.first_option_type.presentation %>
+    <% @product.variants_including_master_and_option_values(current_currency).each_with_index do |variant, index| %>
+      <li data-variant-id='<%= variant.id %>' class="<%= variant.can_supply? ? 'can-supply' : 'cannot-supply' %> " data-variant-message='<%= variant.stock_message ? variant.stock_message : variant.first_option_value.delivery_message %>'>
+        
+        <%= radio_button_tag 'variant_id', variant.id, @variant_id ? (@variant_id == variant.id.to_s) : (index == 0), disabled: !variant.can_supply? %>
+
+        <%= variant.first_option_value.presentation %>
+        <span class='price'><%= variant.price_in(current_currency).money %></span>
+      </li>
+    <% end %>
+  </ul>
+
+<% else %>
+  <%= hidden_field_tag "variant_id", @product.master.id %>
+<% end %>
+
+<div class="add-to-cart">
+  <div class="input-group">
+    <%= number_field_tag :quantity, 1, :class => 'title form-control', :min => 1 %>
+    <span class="input-group-btn">
+      <%= button_tag :class => 'btn btn-success', :id => 'add-to-cart-button', :type => :submit do %>
+        <%= Spree.t(:add_to_cart) %>
+      <% end %>
+    </span>
+  </div>
+</div>
