@@ -1,7 +1,7 @@
 Spree::Variant.class_eval do
 
   def first_option_value
-    self.option_values.where(option_type_id: self.product.first_option_type.id).first
+    self.option_values.where(option_type_id: self.product.first_option_type.id).order(position: :asc).first
   end
 
   def stock_message
