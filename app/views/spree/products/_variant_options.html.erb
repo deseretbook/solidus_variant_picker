@@ -1,8 +1,8 @@
-<% if @product.multiple_variants? %>
+<% if @variants.count > 1 %>
 
-  <%= @product.first_option_type.presentation %>
+  <%= @product.first_option_type.try(:presentation) %>
   <ul>
-    <% @product.variants_including_master_and_option_values(current_currency).each_with_index do |variant, index| %>
+    <% @variants.select{|v| v.option_values.any? }.each_with_index do |variant, index| %>
       <% selected = @variant_id ? (@variant_id == variant.id.to_s) : (index == 0) %>
       <li data-variant-id="#{variant.id}" class="#{variant.can_supply? ? 'can-supply' : 'cannot-supply'} #{selected ? 'selected' : ''}" data-variant-message="#{variant.stock_message ? variant.stock_message : variant.first_option_value.delivery_message}"> 
 

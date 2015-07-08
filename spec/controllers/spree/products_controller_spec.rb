@@ -10,4 +10,14 @@ describe Spree::ProductsController, type: :controller do
     expect(assigns['variant_id'].to_i).to eq(variant.id)
   end
 
+  describe '#show' do
+    it 'returns only variants with option values' do
+      product = create(:product_with_option_types)
+      create(:base_variant, product: product) # this has option values
+      create(:base_variant, product: product, option_values: [])
+
+      expect(assigns['variants'].count).to eq(1)
+    end
+  end
+
 end
