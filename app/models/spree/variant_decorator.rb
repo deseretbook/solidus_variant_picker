@@ -18,9 +18,15 @@ Spree::Variant.class_eval do
   end
 
   def stock_message
-    return "#{Spree.t(:temporarily_out_of_stock)}. #{Spree.t(:deliver_when_available)}." if self.total_on_hand == 0 && self.is_backorderable?
-    return "#{Spree.t(:out_of_stock)}." if !self.can_supply?
-    return nil
+    if !self.in_stock?
+      if self.is_backorderable?
+        "#{Spree.t(:temporarily_out_of_stock)}. #{Spree.t(:deliver_when_available)}."
+      else
+        "#{Spree.t(:out_of_stock)}."
+      end
+    else
+      nil
+    end
   end
 
 end
