@@ -12,9 +12,9 @@ Spree::Variant.class_eval do
     ).uniq
   }
 
-
+  # Returns this variant's option value for its product's first option type.
   def first_option_value
-    self.option_values.where(option_type_id: self.product.first_option_type.id).order(position: :asc).first
+    self.option_values.where(option_type_id: self.product.first_option_type.try(:id)).order(position: :asc).first
   end
 
   def stock_message
