@@ -1,6 +1,6 @@
 <% if @variants.count > 1 %>
 
-  <%= @product.first_option_type.try(:presentation) %>
+  <%= @product.option_types_presentation %>
   <ul>
     <% @variants.select{|v| v.option_values.any? }.each_with_index do |variant, index| %>
       <% selected = @variant_id ? (@variant_id == variant.id.to_s) : (index == 0) %>
