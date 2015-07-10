@@ -17,6 +17,17 @@ Spree::Variant.class_eval do
     self.option_values.where(option_type_id: self.product.first_option_type.try(:id)).order(position: :asc).first
   end
 
+  # Returns all option value delivery messages, if present, as a single String.
+  # Returns nil if no option values have a delivery message.
+  def option_delivery_messages
+    dmsg = option_values.map{|ov|
+      msg = ov.delivery_message
+      msg.present? ? h(msg) : nil
+    }.compact.uniq.join('. ').html_safe
+
+    dmsg.present? ? dmsg : nil
+  end
+
   def stock_message
     if !self.in_stock?
       if self.is_backorderable?
