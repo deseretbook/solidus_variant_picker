@@ -2,9 +2,9 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_variant_picker'
-  s.version     = '2.3.0'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.version     = '2.3.1'
+  s.summary     = 'Enhanced variant listing on Spree product pages'
+  s.description = 'Enhanced variant listing on Spree product pages'
   s.required_ruby_version = '>= 1.9.3'
 
   s.author    = '@thogg4, @n00b2pr0'
