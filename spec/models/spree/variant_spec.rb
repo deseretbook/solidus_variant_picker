@@ -25,7 +25,7 @@ describe Spree::Variant, type: :model do
 
   context 'stock_message' do
     it 'returns deliver when available if backorderable and none on hand' do
-      product = create(:base_product)
+      create(:base_product)
       variant = create(:base_variant)
 
       expect(variant.stock_message).to match(Spree.t('deliver_when_available'))
@@ -33,7 +33,7 @@ describe Spree::Variant, type: :model do
 
     it 'returns deliver when available if backorderable and none on hand' do
       create(:stock_location, backorderable_default: false)
-      product = create(:base_product)
+      create(:base_product)
       variant = create(:base_variant)
 
       expect(variant.stock_message).to match(/Out of Stock\./)
