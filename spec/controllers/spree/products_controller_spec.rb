@@ -1,7 +1,7 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
 describe Spree::ProductsController, type: :controller do
-
   let!(:product) { create(:product) }
   let!(:variant) { create(:master_variant, product: product) }
 
@@ -20,5 +20,4 @@ describe Spree::ProductsController, type: :controller do
       expect(assigns['variants'].count).to eq(1)
     end
   end
-
 end

@@ -1,9 +1,8 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
 describe Spree::Variant, type: :model do
-
   context 'first_option_value' do
-
     it 'returns first option value for first option type on product' do
       product = create(:base_product)
       first_type = create(:option_type, name: 'First Type')
@@ -22,11 +21,9 @@ describe Spree::Variant, type: :model do
       expect(variant.first_option_value.name).to eq('First Value')
       expect(variant.first_option_value.option_type.name).to eq('First Type')
     end
-
   end
 
   context 'stock_message' do
-
     it 'returns deliver when available if backorderable and none on hand' do
       product = create(:base_product)
       variant = create(:base_variant)
@@ -41,7 +38,5 @@ describe Spree::Variant, type: :model do
 
       expect(variant.stock_message).to match(/Out of Stock\./)
     end
-
   end
-
 end

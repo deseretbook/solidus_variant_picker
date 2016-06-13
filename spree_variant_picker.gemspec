@@ -1,4 +1,5 @@
 # encoding: UTF-8
+# frozen_string_literal: true
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_variant_picker'
@@ -7,12 +8,12 @@ Gem::Specification.new do |s|
   s.description = 'Enhanced variant listing on Spree product pages'
   s.required_ruby_version = '>= 1.9.3'
 
-  s.author    = '@thogg4, @n00b2pr0, @ericsaupe'
+  s.author = '@thogg4, @n00b2pr0, @ericsaupe'
   # s.email     = 'you@example.com'
   # s.homepage  = 'http://www.spreecommerce.com'
 
-  #s.files       = `git ls-files`.split("\n")
-  s.test_files  = `git ls-files -- spec/*`.split("\n")
+  # s.files       = `git ls-files`.split("\n")
+  s.test_files = `git ls-files -- spec/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 

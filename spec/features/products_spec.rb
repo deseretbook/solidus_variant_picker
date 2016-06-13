@@ -1,9 +1,8 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
 describe 'Variants Picker Form', type: :feature do
-
   context 'multiple variables' do
-
     let!(:first_option_type) { create(:option_type, presentation: 'First Option Type') }
     let!(:second_option_type) { create(:option_type, presentation: 'Second Option Type') }
 
@@ -34,7 +33,5 @@ describe 'Variants Picker Form', type: :feature do
     #   expect(page).to have_text('Third Value')
     #   expect(page).to_not have_text('Fourth Value')
     # end
-
   end
-
 end

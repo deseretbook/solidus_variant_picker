@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module SolidusVariantPicker
   class Engine < Rails::Engine
     require 'spree/core'

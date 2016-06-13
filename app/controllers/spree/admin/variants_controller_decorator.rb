@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 Spree::Admin::VariantsController.class_eval do
-
   protected
 
   # Keep up to date with Solidus
@@ -10,7 +10,7 @@ Spree::Admin::VariantsController.class_eval do
       # We need to get variants_including_master
       @collection ||= parent.variants_including_master
     else
-      @collection ||= Spree::Variant.only_deleted.where(:product_id => parent.id)
+      @collection ||= Spree::Variant.only_deleted.where(product_id: parent.id)
     end
 
     params[:q] ||= {}
@@ -27,5 +27,4 @@ Spree::Admin::VariantsController.class_eval do
       model_class.find(params[:id])
     end
   end
-
 end
