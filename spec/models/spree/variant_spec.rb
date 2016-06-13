@@ -10,8 +10,8 @@ describe Spree::Variant, type: :model do
       second_type = create(:option_type, name: 'Second Type')
       product.option_types << first_type
       product.option_types << second_type
-      
-      variant = create(:base_variant, { 
+
+      variant = create(:base_variant, {
         product: product,
         option_values: [
           create(:option_value, name: 'First Value', option_type: first_type),
@@ -31,7 +31,7 @@ describe Spree::Variant, type: :model do
       product = create(:base_product)
       variant = create(:base_variant)
 
-      expect(variant.stock_message).to match(/deliver_when_available/)
+      expect(variant.stock_message).to match(Spree.t('deliver_when_available'))
     end
 
     it 'returns deliver when available if backorderable and none on hand' do

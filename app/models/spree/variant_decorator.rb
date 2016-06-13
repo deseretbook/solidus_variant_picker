@@ -2,7 +2,7 @@ Spree::Variant.class_eval do
 
   # Sorts by option value position and other criteria after variant position.
   scope :order_by_option_value, ->{
-    includes(:option_values).references(:option_values).unscope(:order).order(
+    joins(:option_values).unscope(:order).order(
       position: :asc
     ).order(
       'spree_option_values.position ASC'

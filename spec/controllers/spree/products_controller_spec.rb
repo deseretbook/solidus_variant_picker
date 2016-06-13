@@ -16,6 +16,7 @@ describe Spree::ProductsController, type: :controller do
       create(:base_variant, product: product) # this has option values
       create(:base_variant, product: product, option_values: [])
 
+      spree_get :show, id: product.to_param
       expect(assigns['variants'].count).to eq(1)
     end
   end
