@@ -1,8 +1,8 @@
-module SpreeVariantPicker
+module SolidusVariantPicker
   class Engine < Rails::Engine
     require 'spree/core'
     isolate_namespace Spree
-    engine_name 'spree_variant_picker'
+    engine_name 'solidus_variant_picker'
 
     # use rspec for tests
     config.generators do |g|

@@ -30,8 +30,8 @@ require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/factories'
 require 'spree/testing_support/url_helpers'
 
-# Requires factories defined in lib/spree_variant_picker/factories.rb
-require 'spree_variant_picker/factories'
+# Requires factories defined in lib/solidus_variant_picker/factories.rb
+require 'solidus_variant_picker/factories'
 
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
@@ -43,7 +43,7 @@ RSpec.configure do |config|
   # config.infer_spec_type_from_file_location!
 
   config.include Spree::TestingSupport::UrlHelpers
-  config.include Spree::TestingSupport::ControllerRequests, type: :controller 
+  config.include Spree::TestingSupport::ControllerRequests, type: :controller
 
   # == Mock Framework
   config.mock_with :rspec
