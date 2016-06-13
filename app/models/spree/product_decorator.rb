@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 Spree::Product.class_eval do
   def first_option_type
     option_types.order(position: :asc).first

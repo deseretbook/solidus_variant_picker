@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 Spree::Admin::VariantsController.class_eval do
   protected
 

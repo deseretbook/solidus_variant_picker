@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 Spree::Variant.class_eval do
   # Sorts by option value position and other criteria after variant position.
   scope :order_by_option_value, ->{

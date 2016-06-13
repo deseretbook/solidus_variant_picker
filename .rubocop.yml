@@ -11,6 +11,10 @@ AllCops:
     - '**/install/*'
   TargetRubyVersion: 2.3
 
+# Don't require Ruby 2.3 "frozen_string_literal" pragma comment, for now.
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 # Sometimes I believe this reads better
 # This also causes spacing issues on multi-line fixes
 Style/BracesAroundHashParameters:
