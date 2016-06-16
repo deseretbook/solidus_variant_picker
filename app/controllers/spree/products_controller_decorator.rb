@@ -1,7 +1,6 @@
+
 Spree::ProductsController.class_eval do
-
-  before_filter :get_variant_param, only: [:show]
-
+  before_action :get_variant_param, only: [:show]
 
   # Overrides Spree's default show method to order @variants by a different criteria
   def show_with_variant_sort
@@ -10,9 +9,9 @@ Spree::ProductsController.class_eval do
   end
   alias_method_chain :show, :variant_sort
 
-
   private
-    def get_variant_param
-      @variant_id = params[:variant_id] || nil
-    end
+
+  def get_variant_param
+    @variant_id = params[:variant_id] || nil
+  end
 end

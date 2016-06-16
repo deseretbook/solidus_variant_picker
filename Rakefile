@@ -1,3 +1,4 @@
+
 require 'bundler'
 Bundler::GemHelper.install_tasks
 
@@ -16,6 +17,6 @@ end
 
 desc 'Generates a dummy app for testing'
 task :test_app do
-  ENV['LIB_NAME'] = 'spree_variant_picker'
+  ENV['LIB_NAME'] = 'solidus_variant_picker'
   Rake::Task['extension:test_app'].invoke
 end

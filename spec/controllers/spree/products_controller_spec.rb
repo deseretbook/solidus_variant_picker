@@ -1,7 +1,7 @@
+
 require 'spec_helper'
 
 describe Spree::ProductsController, type: :controller do
-
   let!(:product) { create(:product) }
   let!(:variant) { create(:master_variant, product: product) }
 
@@ -16,8 +16,8 @@ describe Spree::ProductsController, type: :controller do
       create(:base_variant, product: product) # this has option values
       create(:base_variant, product: product, option_values: [])
 
+      spree_get :show, id: product.to_param
       expect(assigns['variants'].count).to eq(1)
     end
   end
-
 end

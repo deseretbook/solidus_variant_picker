@@ -1,8 +1,8 @@
-Spree::Variant.class_eval do
 
+Spree::Variant.class_eval do
   # Sorts by option value position and other criteria after variant position.
   scope :order_by_option_value, ->{
-    includes(:option_values).references(:option_values).unscope(:order).order(
+    joins(:option_values).unscope(:order).order(
       position: :asc
     ).order(
       'spree_option_values.position ASC'
@@ -14,7 +14,7 @@ Spree::Variant.class_eval do
 
   # Returns this variant's option value for its product's first option type.
   def first_option_value
-    self.option_values.where(option_type_id: self.product.first_option_type.try(:id)).order(position: :asc).first
+    option_values.where(option_type_id: product.first_option_type.try(:id)).order(position: :asc).first
   end
 
   # Returns all option value delivery messages, if present, as a single String.
@@ -29,15 +29,12 @@ Spree::Variant.class_eval do
   end
 
   def stock_message
-    if !self.in_stock?
-      if self.is_backorderable?
+    if !in_stock?
+      if is_backorderable?
         "#{Spree.t(:temporarily_out_of_stock)}. #{Spree.t(:deliver_when_available)}."
       else
         "#{Spree.t(:out_of_stock)}."
       end
-    else
-      nil
     end
   end
-
 end
