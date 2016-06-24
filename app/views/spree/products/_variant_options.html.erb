@@ -4,12 +4,12 @@
   <ul>
     <% @variants.select{|v| v.option_values.any? }.each_with_index do |variant, index| %>
       <% selected = @variant_id ? (@variant_id == variant.id.to_s) : (index == 0) %>
-      <li data-variant-id="#{variant.id}" class="#{variant.can_supply? ? 'can-supply' : 'cannot-supply'} #{selected ? 'selected' : ''}" data-variant-message="#{variant.stock_message ? variant.stock_message : variant.first_option_value.delivery_message}"> 
+      <li data-variant-id="#{variant.id}" class="#{variant.can_supply? ? 'can-supply' : 'cannot-supply'} #{selected ? 'selected' : ''}" data-variant-message="#{variant.stock_message ? variant.stock_message : variant.first_option_value.delivery_message}">
 
         <%= radio_button_tag 'variant_id', variant.id, selected, disabled: !variant.can_supply? %>
 
         <%= variant.first_option_value.presentation %>
-        <span class='price'><%= variant.price_in(current_currency).money %></span>
+        <span class='price'><%= variant.price_for(current_pricing_options).money %></span>
       </li>
     <% end %>
   </ul>
