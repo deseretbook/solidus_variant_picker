@@ -11,13 +11,12 @@ AllCops:
     - '**/install/*'
   TargetRubyVersion: 2.3
 
-# Don't require Ruby 2.3 "frozen_string_literal" pragma comment, for now.
-Style/FrozenStringLiteralComment:
+# Block length was set to 25, we currently don't have a rule for this
+BlockLength:
   Enabled: false
 
-# Sometimes I believe this reads better
-# This also causes spacing issues on multi-line fixes
-Style/BracesAroundHashParameters:
+# Don't require Ruby 2.3 "frozen_string_literal" pragma comment, for now.
+Style/FrozenStringLiteralComment:
   Enabled: false
 
 # We use class vars and will have to continue doing so for compatability
