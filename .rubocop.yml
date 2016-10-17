@@ -19,6 +19,10 @@ BlockLength:
 HttpPositionalArguments:
   Enabled: false
 
+# We are OK with html safe in here
+OutputSafety:
+  Enabled: false
+
 # Don't require Ruby 2.3 "frozen_string_literal" pragma comment, for now.
 Style/FrozenStringLiteralComment:
   Enabled: false

@@ -23,9 +23,7 @@ Spree::Variant.class_eval do
     dmsg = option_values.map{ |ov|
       msg = ov.delivery_message
       msg.present? ? h(msg) : nil
-    }.compact.uniq
-
-    dmsg = safe_join(dmsg, '. ')
+    }.compact.uniq.join('. ').html_safe
 
     dmsg.present? ? dmsg : nil
   end
