@@ -20,7 +20,7 @@ Spree::Variant.class_eval do
   # Returns all option value delivery messages, if present, as a single String.
   # Returns nil if no option values have a delivery message.
   def option_delivery_messages
-    dmsg = option_values.map{|ov|
+    dmsg = option_values.map{ |ov|
       msg = ov.delivery_message
       msg.present? ? h(msg) : nil
     }.compact.uniq.join('. ').html_safe

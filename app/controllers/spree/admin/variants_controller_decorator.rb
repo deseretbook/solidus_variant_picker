@@ -4,7 +4,7 @@ Spree::Admin::VariantsController.class_eval do
 
   # Keep up to date with Solidus
   def collection
-    @deleted = (params.key?(:deleted) && params[:deleted] == "on") ? "checked" : ""
+    @deleted = params.key?(:deleted) && params[:deleted] == "on" ? "checked" : ""
 
     if @deleted.blank?
       # We need to get variants_including_master

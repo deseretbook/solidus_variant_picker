@@ -10,13 +10,11 @@ describe Spree::Variant, type: :model do
       product.option_types << first_type
       product.option_types << second_type
 
-      variant = create(:base_variant, {
-        product: product,
+      variant = create(:base_variant, product: product,
         option_values: [
           create(:option_value, name: 'First Value', option_type: first_type),
           create(:option_value, name: 'Second Value', option_type: second_type)
-        ]
-      })
+        ])
 
       expect(variant.first_option_value.name).to eq('First Value')
       expect(variant.first_option_value.option_type.name).to eq('First Type')

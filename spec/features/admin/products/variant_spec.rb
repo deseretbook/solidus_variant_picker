@@ -23,6 +23,6 @@ describe 'Variants', type: :feature, js: true do
 
   it 'should go to master variant edit page' do
     visit spree.edit_admin_product_variant_path(product, master_variant)
-    expect(page).to have_text('WEIGHT') # weight only shows on variant edit page
+    expect(page).to have_text('Weight') # weight only shows on variant edit page
   end
 end
