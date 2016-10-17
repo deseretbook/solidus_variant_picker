@@ -15,6 +15,10 @@ AllCops:
 BlockLength:
   Enabled: false
 
+# Changing this was causing the route not found error in specs
+HttpPositionalArguments:
+  Enabled: false
+
 # Don't require Ruby 2.3 "frozen_string_literal" pragma comment, for now.
 Style/FrozenStringLiteralComment:
   Enabled: false
