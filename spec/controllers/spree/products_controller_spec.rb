@@ -11,13 +11,13 @@ describe Spree::ProductsController, type: :controller do
   end
 
   describe '#show' do
-    it 'returns only variants with option values' do
+    it 'returns all variants even if they dont have option values' do
       product = create(:product_with_option_types)
       create(:base_variant, product: product) # this has option values
       create(:base_variant, product: product, option_values: [])
 
       get :show, params: { id: product.to_param }
-      expect(assigns['variants'].count).to eq(1)
+      expect(assigns['variants'].count).to eq(3)
     end
   end
 end
