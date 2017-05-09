@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_variant_picker'
-  s.version     = '2.0.0'
+  s.version     = '2.1'
   s.summary     = 'Enhanced variant listing on Spree product pages'
   s.description = 'Enhanced variant listing on Spree product pages'
   s.required_ruby_version = '>= 2.2.2'
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'solidus', ['>= 1.0.0', '< 3']
+  s.add_dependency 'solidus', ['>= 1.0', '< 3']
   s.add_dependency 'deface'
 
   s.add_development_dependency 'capybara'
@@ -30,5 +30,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'poltergeist'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'rubocop'
   s.add_development_dependency 'pry'
 end

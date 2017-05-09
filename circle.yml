@@ -1,10 +1,18 @@
 machine:
+  environment:
+    SOLIDUS_BRANCH: v2.1
   ruby:
     version: 2.3.1
 
-test:
+dependencies:
   pre:
+    - gem install bundler
+
+database:
+  override:
     - bundle exec rake test_app
+
+test:
   override:
     - bundle exec rubocop -R
-    - bundle exec rspec
+    - bundle exec rake

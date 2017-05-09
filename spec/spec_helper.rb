@@ -39,6 +39,7 @@ Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
 
   # Infer an example group's spec type from the file location.
   # config.infer_spec_type_from_file_location!

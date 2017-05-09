@@ -1,6 +1,6 @@
 Spree::Variant.class_eval do
   # Sorts by option value position and other criteria after variant position.
-  scope :order_by_option_value, ->{
+  scope :order_by_option_value, (->{
     left_outer_joins(:option_values)
     .unscope(:order).order(
       position: :asc
@@ -10,7 +10,7 @@ Spree::Variant.class_eval do
       is_master: :desc,
       id: :asc
     )
-  }
+  })
 
   # Returns this variant's option value for its product's first option type.
   def first_option_value
