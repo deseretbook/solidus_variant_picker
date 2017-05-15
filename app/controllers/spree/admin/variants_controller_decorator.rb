@@ -7,8 +7,8 @@ Spree::Admin::VariantsController.class_eval do
     @deleted = params.key?(:deleted) && params[:deleted] == "on" ? "checked" : ""
 
     if @deleted.blank?
-      # We need to get variants_including_master
-      @collection ||= parent.variants_including_master
+      # We need to get variants
+      @collection ||= parent.variants
     else
       @collection ||= Spree::Variant.only_deleted.where(product_id: parent.id)
     end
@@ -22,7 +22,7 @@ Spree::Admin::VariantsController.class_eval do
 
   def find_resource
     if parent_data.present?
-      parent.variants_including_master.find(params[:id])
+      parent.variants.find(params[:id])
     else
       model_class.find(params[:id])
     end
