@@ -5,7 +5,7 @@ describe 'Variants', type: :feature, js: true do
   stub_authorization!
 
   let(:product) { create(:base_product) }
-  let!(:master_variant) { create(:master_variant, product: product) }
+  let!(:master_variant) { product.master }
   let!(:variant) { create(:variant, product: product) }
   let(:variant_to_delete) { create(:variant, product: product) }
 

@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe Spree::ProductsController, type: :controller do
   let!(:product) { create(:product) }
-  let!(:variant) { create(:master_variant, product: product) }
+  let!(:variant) { product.master }
 
   it 'should assign @variant_id if variant_id param is present' do
     get :show, params: { id: product.to_param, variant_id: variant.id }
