@@ -10,7 +10,7 @@ describe 'Variants', type: :feature, js: true do
   let(:variant_to_delete) { create(:variant, product: product) }
 
   it 'should show master variant sku on product page' do
-    visit spree.admin_product_path(product)
+    visit spree.admin_product_variants_path(product)
     click_link 'Variants'
     expect(page).to have_text(master_variant.sku)
   end
