@@ -21,7 +21,7 @@ Spree::Admin::VariantsController.class_eval do
   end
 
   def find_resource
-    if parent_data.present?
+    if self.class.parent_data.present?
       parent.variants_including_master.find(params[:id])
     else
       model_class.find(params[:id])
