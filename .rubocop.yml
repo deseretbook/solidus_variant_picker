@@ -19,6 +19,9 @@ BlockLength:
 HttpPositionalArguments:
   Enabled: false
 
+LexicallyScopedActionFilter:
+  Enabled: false
+
 # We are OK with html safe in here
 OutputSafety:
   Enabled: false
@@ -58,9 +61,6 @@ Performance/Count:
   Enabled: false
 
 Style/RaiseArgs:
-  Enabled: false
-
-Style/OpMethod:
   Enabled: false
 
 # We can use good judgement here
@@ -240,4 +240,7 @@ Metrics/ParameterLists:
   Enabled: false
 
 Metrics/PerceivedComplexity:
+  Enabled: false
+
+Naming/BinaryOperatorParameterName:
   Enabled: false

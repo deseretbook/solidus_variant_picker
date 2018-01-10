@@ -5,6 +5,7 @@
 .idea
 .project
 .sass-cache
+.byebug_historys
 coverage
 Gemfile.lock
 tmp

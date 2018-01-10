@@ -25,7 +25,7 @@ Spree::Variant.class_eval do
       msg.present? ? h(msg) : nil
     }.compact.uniq.join('. ').html_safe
 
-    dmsg.present? ? dmsg : nil
+    dmsg.presence
   end
 
   def stock_message
