@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/deseretbook/solidus_variant_picker.svg?style=svg)](https://circleci.com/gh/deseretbook/solidus_variant_picker)
+
 # Solidus Variant Picker
 
 Plugin to allow selecting different variants on the product page.
