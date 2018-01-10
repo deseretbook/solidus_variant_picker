@@ -60,9 +60,6 @@ Performance/Count:
 Style/RaiseArgs:
   Enabled: false
 
-Style/OpMethod:
-  Enabled: false
-
 # We can use good judgement here
 Style/RegexpLiteral:
   Enabled: false
@@ -240,4 +237,7 @@ Metrics/ParameterLists:
   Enabled: false
 
 Metrics/PerceivedComplexity:
+  Enabled: false
+
+Naming/BinaryOperatorParameterName:
   Enabled: false
