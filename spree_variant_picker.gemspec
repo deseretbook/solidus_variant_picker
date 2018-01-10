@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.version     = '2.4.0'
   s.summary     = 'Enhanced variant listing on Spree product pages'
   s.description = 'Enhanced variant listing on Spree product pages'
-  s.required_ruby_version = '>= 2.2.2'
+  s.required_ruby_version = '>= 2.3'
 
   s.author = '@thogg4, @n00b2pr0, @ericsaupe'
   # s.email     = 'you@example.com'

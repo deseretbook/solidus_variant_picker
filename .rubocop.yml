@@ -19,6 +19,9 @@ BlockLength:
 HttpPositionalArguments:
   Enabled: false
 
+LexicallyScopedActionFilter:
+  Enabled: false
+
 # We are OK with html safe in here
 OutputSafety:
   Enabled: false
