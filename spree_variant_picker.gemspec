@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_variant_picker'
-  s.version     = '2.4.0'
+  s.version     = '2.5.0'
   s.summary     = 'Enhanced variant listing on Spree product pages'
   s.description = 'Enhanced variant listing on Spree product pages'
   s.required_ruby_version = '>= 2.3'
