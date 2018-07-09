@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'factory_bot'
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'poltergeist'
+  s.add_development_dependency 'puma'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'sass-rails'
